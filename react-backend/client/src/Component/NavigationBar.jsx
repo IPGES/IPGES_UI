@@ -1,0 +1,41 @@
+import React from 'react';
+import Navbar from 'react-bootstrap/lib/Navbar';
+import Nav from 'react-bootstrap/lib/Nav';
+import NavItem from 'react-bootstrap/lib/NavItem';
+import Button from 'react-bootstrap/lib/Button';
+import NavbarHeader from 'react-bootstrap/lib/NavbarHeader';
+
+
+class NavigationBar extends React.Component {
+    render() {
+      let brand = <a href='#'>Project Name</a>;
+      return (
+        <Navbar inverse collapseOnSelect>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#home">Intelligent Power Grid Experimental System</a>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse>
+          <Nav right eventKey={0}>
+            <NavItem eventKey={1} href="#">
+              Graphs
+  			    </NavItem>
+            <NavItem eventKey={2} href="#">
+      				Controls
+      			</NavItem>
+            <NavItem eventKey={3} href="#">
+              Database
+            </NavItem>
+            <NavItem eventKey={4} href="#">
+              Realtime Data
+            </NavItem>
+          </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      );
+  }
+}
+
+export default NavigationBar;
