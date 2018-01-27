@@ -12,5 +12,4 @@ Inside the *react-backend/client* folder:
 npm start
 ```
 
-### View Page at:
-http://localhost:3000/
+### View Page at: http://localhost:3000/
