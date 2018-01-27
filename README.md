@@ -1,5 +1,15 @@
 # UI
 
+### Installing Dependencies:
+Inside the *react-backend* folder:
+```
+npm install
+```
+Inside the *react-backend/client* folder:
+```
+npm install
+```
+
 ### Start Express Backend Server:
 Inside the *react-backend* folder:
 ```

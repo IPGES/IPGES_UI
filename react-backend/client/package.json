@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "fusioncharts": "^3.12.2",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
+    "react-fusioncharts": "^1.0.4",
     "react-scripts": "1.1.0"
   },
   "scripts": {
