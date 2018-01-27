@@ -1,16 +1,16 @@
-#UI
+# UI
 
-###Start Express Backend Server:
+### Start Express Backend Server:
 Inside the *react-backend* folder:
-'''
+```
 PORT=3001 node bin/www
-'''
+```
 
-###Start Client Server:
+### Start Client Server:
 Inside the *react-backend/client* folder:
-'''
+```
 npm start
-'''
+```
 
-###View Page at:
+### View Page at:
 http://localhost:3000/
