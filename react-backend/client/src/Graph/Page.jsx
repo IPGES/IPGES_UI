@@ -12,30 +12,36 @@ class GraphPage extends React.Component {
                   tab: 0}
 
     this.handleTabChange = this.handleTabChange.bind(this);
+    this.handleTimeSubmit = this.handleTimeSubmit.bind(this);
   }
 
   handleTabChange(tabNum) {
     this.props.onTabChange(tabNum);
   }
 
-  componentDidMount() {
+  handleTimeSubmit(tabNum) {
     fetch('/users')
       .then(res => res.json())
       .then(users => this.setState({ users }));
+  }
+
+
+  componentDidMount() {
+    fetch('/users')
+      .then(res => res.json())
   }
 
   render() {
     return (
       <div>
         <NavigationBar onTabChange={this.handleTabChange}/>
-        <NumInput />
+        <NumInput onTimeSubmit={this.handleTimeSubmit}/>
         <Chart />
         <Footer />
         <h1>Users</h1>
         {this.state.users.map(user =>
           <div key={user.id}>{user.username}</div>
         )}
-        {this.state.tab}
       </div>
     );
   }
