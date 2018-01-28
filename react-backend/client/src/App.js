@@ -24,35 +24,35 @@ class App extends Component {
       case 0:
         return (
           <div className="App">
-            <GraphPage onTabChange={this.handleTabChange} tab={this.state.tab}/>,
+            <GraphPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;
       case 1:
         return (
           <div className="App">
-            <GraphPage onTabChange={this.handleTabChange} tab={this.state.tab}/>,
+            <GraphPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;
       case 2:
         return (
           <div className="App">
-            <GraphPage onTabChange={this.handleTabChange} tab={this.state.tab}/>,
+            <GraphPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;
       case 3:
         return (
           <div className="App">
-            <GraphPage onTabChange={this.handleTabChange} tab={this.state.tab}/>,
+            <GraphPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;
       case 4:
         return (
           <div className="App">
-            <RealtimeDataPage onTabChange={this.handleTabChange} tab={this.state.tab}/>,
+            <RealtimeDataPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;

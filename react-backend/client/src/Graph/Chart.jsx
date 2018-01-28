@@ -57,15 +57,14 @@ staticChartConfigs = {
   	dataSource: myDataSource
 };
 
-class Chart extends React.Component {
+class ZoomChart extends React.Component {
   render() {
     return (
       <div>
-        <script type="text/javascript" src="fusioncharts/themes/fusioncharts.theme.ocean.js"></script>
         <ReactFC {...staticChartConfigs} />
       </div>
     );
   }
 }
 
-export default Chart;
+export default ZoomChart;
