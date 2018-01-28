@@ -21,6 +21,7 @@ class RealtimeDataPage extends React.Component {
       <div>
         <NavigationBar onTabChange={this.handleTabChange}/>
         <NumInput />
+        <Footer />
       </div>
     );
   }

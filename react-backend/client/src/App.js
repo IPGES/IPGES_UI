@@ -38,14 +38,14 @@ class App extends Component {
       case 2:
         return (
           <div className="App">
-            <GraphPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
+            <RealtimeDataPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;
       case 3:
         return (
           <div className="App">
-            <GraphPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
+            <RealtimeDataPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;
