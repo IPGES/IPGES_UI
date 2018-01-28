@@ -8,9 +8,8 @@ charts(fusioncharts)
 
 var myDataSource = {
 		chart: {
-		  	caption: "Harry's SuperMart",
-		  	subCaption: "Top 5 stores in last month by revenue",
-		  	numberPrefix: "$",
+		  	caption: "Load Power Consumption",
+		  	numberSuffix: "W",
 		  	theme: "ocean"
 		},
 		data:[
@@ -37,8 +36,8 @@ var myDataSource = {
 		]
 	},
 
-	revenueChartConfigs = {
-		id: "revenue-chart",
+	powerChartConfigs = {
+		id: "power-chart",
 	    renderAt: "revenue-chart-container",
 		type: "column2d",
 		width:600,
@@ -50,26 +49,9 @@ var myDataSource = {
 class Chart extends React.Component {
   render() {
     return (
-      <ReactFC {...revenueChartConfigs} />
+      <ReactFC {...powerChartConfigs} />
     );
   }
-/*
-  var chartConfigs = {
-      type: "Column2D",
-      className: "fc-column2d", // ReactJS attribute-name for DOM classes
-      dataFormat: "JSON",
-      dataSource: {
-          chart:{},
-          data: [{value: 500}, {value: 600}, {value: 700}]
-      }
-  };
-
-  render() {
-    return (
-      <ReactFC {...chartConfigs} />
-    );
-  }
-  */
 }
 
 export default Chart;

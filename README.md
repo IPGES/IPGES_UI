@@ -3,23 +3,28 @@
 ### Installing Dependencies:
 Inside the *react-backend* folder:
 ```
-npm install
+$npm install
 ```
 Inside the *react-backend/client* folder:
 ```
-npm install
+$npm install
 ```
 
 ### Start Express Backend Server:
 Inside the *react-backend* folder:
 ```
-PORT=3001 node bin/www
+$PORT=3001 node bin/www
+```
+On Windows:
+```
+>set PORT=3001
+>node bin/www
 ```
 
 ### Start Client Server:
 Inside the *react-backend/client* folder:
 ```
-npm start
+$npm start
 ```
 
 ### View Page at: http://localhost:3000/
