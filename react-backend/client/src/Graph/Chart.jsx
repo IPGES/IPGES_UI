@@ -52,7 +52,7 @@ staticChartConfigs = {
     renderAt: "static-chart-container",
 	type: "zoomline",
 	width:600,
-    height: 400,
+    height: 350,
   	dataFormat: "json",
   	dataSource: myDataSource
 };

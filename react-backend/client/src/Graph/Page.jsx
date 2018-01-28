@@ -5,13 +5,38 @@ import Footer from '../Components/Footer.jsx';
 import Chart from '../Graph/Chart.jsx';
 
 class GraphPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {users: [],
+                  tab: 0}
+
+    this.handleTabChange = this.handleTabChange.bind(this);
+  }
+
+  handleTabChange(tabNum) {
+    this.props.onTabChange(tabNum);
+  }
+
+
+  componentDidMount() {
+    fetch('/users')
+      .then(res => res.json())
+      .then(users => this.setState({ users }));
+  }
+
   render() {
     return (
       <div>
-        <NavigationBar />
+        <NavigationBar onTabChange={this.handleTabChange}/>
         <NumInput />
         <Chart />
         <Footer />
+        <h1>Users</h1>
+        {this.state.users.map(user =>
+          <div key={user.id}>{user.username}</div>
+        )}
+        {this.state.tab}
       </div>
     );
   }

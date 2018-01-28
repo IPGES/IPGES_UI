@@ -1,6 +1,14 @@
 # UI
 
+<<<<<<< Updated upstream
 ### 1) Install Dependencies:
+=======
+### First Install These:
+node.js
+npm (node package manager)
+
+### Installing Dependencies:
+>>>>>>> Stashed changes
 Inside the *react-backend* folder:
 ```
 $npm install

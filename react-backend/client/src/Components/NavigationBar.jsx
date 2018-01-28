@@ -3,19 +3,38 @@ import Navbar from 'react-bootstrap/lib/Navbar';
 import Nav from 'react-bootstrap/lib/Nav';
 import NavItem from 'react-bootstrap/lib/NavItem';
 
+import Grid from 'react-bootstrap/lib/Form'; //testing
+
 class NavigationBar extends React.Component {
+    constructor(props) {
+      super(props);
+
+      this.handleSelect = this.handleSelect.bind(this);
+    }
+
+
+    handleSelect(eventKey, event) {
+      this.props.onTabChange(eventKey);
+            /*
+      alert('EventKey: ' + eventKey + '\n' +
+            'Current State: ' + this.props.tab);
+      this.setState({tab: eventKey});
+            */
+    }
+
     render() {
       let brand = <a href='#'>Project Name</a>;
       return (
-        <Navbar inverse collapseOnSelect>
+        <Navbar inverse collapseOnSelect onSelect={this.handleSelect}>
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#home">Intelligent Power Grid Experimental System</a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
+
           <Navbar.Collapse>
-          <Nav right eventKey={0}>
+          <Nav right eventKey={0} >
             <NavItem eventKey={1} href="#">
               Graphs
   			    </NavItem>

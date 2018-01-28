@@ -4,14 +4,26 @@ import NumInput from '../Components/NumInput.jsx';
 import Footer from '../Components/Footer.jsx';
 
 class RealtimeDataPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {tab: 0}
+
+    this.handleTabChange = this.handleTabChange.bind(this);
+  }
+
+  handleTabChange(tabNum) {
+    this.props.onTabChange(tabNum);
+  }
+
   render() {
     return (
       <div>
-        <NavigationBar />
+        <NavigationBar onTabChange={this.handleTabChange}/>
         <NumInput />
       </div>
     );
   }
 }
 
-export default GraphPage;
+export default RealtimeDataPage;
