@@ -137,9 +137,11 @@ class GraphPage extends React.Component {
   }
 
   handleTimeSubmit(tabNum) {
-    fetch('/users')
+    fetch('/zoomChart')
       .then(res => res.json())
-      .then(users => this.setState({ users }))
+      .then(users => {
+        this.setState({ users })
+      })
       .then(this.updateChartData())
   }
 
@@ -167,6 +169,9 @@ class GraphPage extends React.Component {
   componentDidMount() {
     fetch('/users')
       .then(res => res.json())
+      .then(users => {
+        this.setState({ users })
+      })
   }
 
   render() {

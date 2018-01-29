@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
   res.json([{
   	id: 1,
-  	username: "samsepi0l"
+  	username: "samsepi0l2"
   }, {
   	id: 2,
   	username: "D0loresH4ze"
