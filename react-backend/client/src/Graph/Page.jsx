@@ -123,8 +123,6 @@ class GraphPage extends React.Component {
                   tab: 0,
                   childChartConfigs: staticChartConfigs,
                   dataSource : myDataSource2,
-                  categories : staticChartCategories,
-                  dataset : staticChartData
                 }
 
     this.handleTabChange = this.handleTabChange.bind(this);
@@ -146,18 +144,6 @@ class GraphPage extends React.Component {
   }
 
   updateChartData() {
-    this.setState({
-      dataSource: Object.assign(
-        this.state.dataSource.categories,
-        {categories: this.state.categories}
-      )
-    });
-    this.setState({
-      dataSource: Object.assign(
-        this.state.dataSource.dataset,
-        {dataset: this.state.dataset}
-      )
-    })
     this.setState({
       childChartConfigs: Object.assign(
         this.state.childChartConfigs.dataSource,
