@@ -140,6 +140,9 @@ class GraphPage extends React.Component {
       .then(users => {
         this.setState({ users })
       })
+			.then(
+				this.setState({dataSource : myDataSource2})
+			)
       .then(this.updateChartData())
   }
 
