@@ -19,6 +19,7 @@ class App extends Component {
   }
 
   handleTabChange(tabNum) {
+    alert('tabNum : ' + tabNum);
     this.setState({tab: tabNum});
   }
 
@@ -66,14 +67,14 @@ class App extends Component {
               <RealtimeDataPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
             </div>
           );
-      break;
+          break;
       case 6:
           return (
             <div className="App">
-              <OnelinePage onTabChange={this.handleTabChange} tab={this.state.tab}/>
+              <TeamPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
             </div>
           );
-      break;
+          break;
     }
   }
 }
