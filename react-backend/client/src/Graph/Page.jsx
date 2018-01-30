@@ -138,26 +138,22 @@ class GraphPage extends React.Component {
     fetch('/zoomChart')
       .then(res => res.json())
       .then(newData => (
-        this.setState((prevState, props) => ({ dataSource: newData }))
-			))
-      this.updateChartData()
+        this.setState((prevState, props) => ({ dataSource: newData[0] }))
+      ))
+      .then(this.updateChartData())
   }
 
 	updateChartData() {
 		this.setState((prevState, props) => ({
-			childChartConfigs : staticChartConfigs2
+      ...prevState,
+      childChartConfigs: {
+        ...prevState.childChartConfigs, 
+        dataSource : prevState.dataSource
+      }
 		}));
-	}
-/*
-  updateChartData() {
-    this.setState({
-      childChartConfigs: Object.assign(
-        this.state.childChartConfigs.dataSource,
-        {dataSource: this.state.dataSource}
-      )
-    });
   }
-*/
+  
+
   componentDidMount() {
     fetch('/users')
       .then(res => res.json())
