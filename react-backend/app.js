@@ -7,7 +7,9 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var zoomGraphNotes = require('./routes/zoomGraphNotes');
-var individualGraphs = require('./routes/individualGraphs')
+var individualGraph = require('./routes/individualGraph')
+var totalsGraph = require('./routes/totalsGraph')
+
 
 var app = express();
 
@@ -25,7 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/zoomGraphNotes', zoomGraphNotes);
-app.use('/individualGraphs', individualGraphs);
+app.use('/individualGraph', individualGraph);
+app.use('/totalsGraph', totalsGraph);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

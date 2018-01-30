@@ -4,6 +4,11 @@ import './App.css';
 
 import IndividualGraph from './IndividualGraph/Page.jsx';
 import RealtimeDataPage from './RealtimeData/Page.jsx';
+import LoadVsGenerationPage from './LoadVsGeneration/Page.jsx';
+import ControlsPage from './Controls/Page.jsx';
+import DatabasePage from './Database/Page.jsx';
+import TeamPage from './Team/Page.jsx';
+import OnelinePage from './Oneline/Page.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +28,7 @@ class App extends Component {
       case 0: //MUST HAVE Renders on DEFAULT
         return (
           <div className="App">
-            <IndividualGraph onTabChange={this.handleTabChange} tab={this.state.tab}/>
+            <TeamPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;
@@ -37,24 +42,38 @@ class App extends Component {
       case 2:
         return (
           <div className="App">
-            <RealtimeDataPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
+            <LoadVsGenerationPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;
       case 3:
         return (
           <div className="App">
-            <RealtimeDataPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
+            <ControlsPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;
       case 4:
         return (
           <div className="App">
-            <RealtimeDataPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
+            <DatabasePage onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;
+      case 5:
+          return (
+            <div className="App">
+              <RealtimeDataPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
+            </div>
+          );
+      break;
+      case 6:
+          return (
+            <div className="App">
+              <OnelinePage onTabChange={this.handleTabChange} tab={this.state.tab}/>
+            </div>
+          );
+      break;
     }
   }
 }

@@ -50,6 +50,9 @@ class NavigationBar extends React.Component {
             <NavItem eventKey={5} href="#">
               Realtime Data
             </NavItem>
+            <NavItem eventKey={6} href="#">
+              Team
+            </NavItem>
           </Nav>
           </Navbar.Collapse>
         </Navbar>

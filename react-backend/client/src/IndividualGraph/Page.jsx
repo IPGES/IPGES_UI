@@ -6,7 +6,7 @@ import Chart from './Chart.jsx';
 
 var myDataSource = {
 		chart: {
-		  	caption: "Load Power Consumption",
+		  	caption: "IPGES Power Flow",
         numberSuffix: "W",
         "yaxisname": "Power",
         "xaxisname": "Time",
@@ -37,7 +37,24 @@ var myDataSource = {
       }],
       "dataset": [
 				{
+					seriesname : "PV",
 					"data": "978|976|955"
+				},
+				{
+					seriesname : "Inverter",
+					data: "1053|1057|1084"
+				},
+				{
+					seriesname : "Wind",
+					data: "1053|1057|1084"
+				},
+				{
+					seriesname : "Grid",
+					data: "1053|1057|1084"
+				},
+				{
+					seriesname : "Load",
+					data: "1053|1057|1084"
 				}
       ]
 }
@@ -90,12 +107,12 @@ class IndividualGraphPage extends React.Component {
 		this.setState((prevState, props) => ({
       ...prevState,
       childChartConfigs: {
-        ...prevState.childChartConfigs, 
+        ...prevState.childChartConfigs,
         dataSource : prevState.dataSource
       }
 		}));
   }
-  
+
 
   componentDidMount() {
     fetch('/zoomGraphNotes')

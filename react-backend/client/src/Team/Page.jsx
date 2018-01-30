@@ -3,7 +3,7 @@ import NavigationBar from '../Components/NavigationBar.jsx';
 import NumInput from '../Components/NumInput.jsx';
 import Footer from '../Components/Footer.jsx';
 
-class RealtimeDataPage extends React.Component {
+class TeamPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -20,11 +20,11 @@ class RealtimeDataPage extends React.Component {
     return (
       <div>
         <NavigationBar onTabChange={this.handleTabChange}/>
-        <h1> Please contact the Senior Design Team to make Realtime Data page </h1>
+        <h1> Please contact the Senior Design Team to make Team page </h1>
         <Footer />
       </div>
     );
   }
 }
 
-export default RealtimeDataPage;
+export default TeamPage;

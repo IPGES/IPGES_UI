@@ -40,7 +40,7 @@ class NumInput extends React.Component {
           End Time:
           <input type="text" value={this.state.EndTime} onChange={this.handleEndChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Gather Data" />
       </form>
     );
   }

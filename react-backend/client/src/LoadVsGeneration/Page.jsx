@@ -6,7 +6,7 @@ import Chart from './Chart.jsx';
 
 var myDataSource = {
 		chart: {
-		  	caption: "Load Power Consumption",
+		  	caption: "Load Vs Generation",
         numberSuffix: "W",
         "yaxisname": "Power",
         "xaxisname": "Time",
@@ -73,7 +73,7 @@ class LoadVsGenerationPage extends React.Component {
   }
 
   handleTimeSubmit(timeStart, timeEnd) {
-    const API = '/individualGraphs'
+    const API = '/totalsGraph'
     const QUERY = '';
     alert('StartTime: ' + timeStart + '\n' +
     'EndTime: ' + timeEnd);
@@ -90,12 +90,12 @@ class LoadVsGenerationPage extends React.Component {
 		this.setState((prevState, props) => ({
       ...prevState,
       childChartConfigs: {
-        ...prevState.childChartConfigs, 
+        ...prevState.childChartConfigs,
         dataSource : prevState.dataSource
       }
 		}));
   }
-  
+
 
   componentDidMount() {
     fetch('/zoomGraphNotes')
