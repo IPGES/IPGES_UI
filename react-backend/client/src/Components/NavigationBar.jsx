@@ -23,18 +23,18 @@ class NavigationBar extends React.Component {
     }
 
     render() {
-      let brand = <a href='#'>Project Name</a>;
+      //let brand = <a href='#'>Project Name</a>;
       return (
         <Navbar inverse collapseOnSelect onSelect={this.handleSelect}>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#home">Intelligent Power Grid Experimental System</a>
+              <a>Intelligent Power Grid Experimental System</a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
 
           <Navbar.Collapse>
-          <Nav right eventKey={0} >
+          <Nav right eventKey={0} href="#">
             <NavItem eventKey={1} href="#">
               System Graph
   			    </NavItem>
@@ -49,6 +49,9 @@ class NavigationBar extends React.Component {
             </NavItem>
             <NavItem eventKey={5} href="#">
               Realtime Data
+            </NavItem>
+            <NavItem eventKey={0} href="#">
+              Oneline
             </NavItem>
             <NavItem eventKey={6} href="#">
               Team

@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   handleTabChange(tabNum) {
-    alert('tabNum : ' + tabNum);
+    //alert('tabNum : ' + tabNum);
     this.setState({tab: tabNum});
   }
 
@@ -29,7 +29,7 @@ class App extends Component {
       case 0: //MUST HAVE Renders on DEFAULT
         return (
           <div className="App">
-            <TeamPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
+            <OnelinePage onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;

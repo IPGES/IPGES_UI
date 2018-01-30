@@ -20,7 +20,9 @@ class OnelinePage extends React.Component {
     return (
       <div>
         <NavigationBar onTabChange={this.handleTabChange}/>
-        <h1> Please contact the Senior Design Team to make Controls page </h1>
+        <h1> IPGES Oneline </h1>
+        <img src={require('./OnelineImage.png')} style={{width: 900}}/>
+        <h3> Please contact the Senior Design Team to describe the project </h3>
         <Footer />
       </div>
     );
