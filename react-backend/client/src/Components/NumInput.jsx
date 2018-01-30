@@ -25,9 +25,7 @@ class NumInput extends React.Component {
   }
 
   handleSubmit(event) {
-    this.props.onTimeSubmit();
-    alert('StartTime: ' + this.state.StartTime + '\n' +
-          'EndTime: ' + this.state.EndTime);
+    this.props.onTimeSubmit(this.state.StartTime, this.state.EndTime);
     event.preventDefault();
   }
 

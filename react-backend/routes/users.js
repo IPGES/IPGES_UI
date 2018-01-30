@@ -8,10 +8,10 @@ router.get('/', function(req, res, next) {
 
   res.json([{
   	id: 1,
-  	username: "samsepi0l2"
+  	username: "Time Must be formmated HH:MM"
   }, {
   	id: 2,
-  	username: "D0loresH4ze"
+  	username: "Time is 24 Hours so 1pm = 13"
   }]);
 });
 

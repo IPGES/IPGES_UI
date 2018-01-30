@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import GraphPage from './Graph/Page.jsx';
+import IndividualGraph from './IndividualGraph/Page.jsx';
 import RealtimeDataPage from './RealtimeData/Page.jsx';
 
 class App extends Component {
@@ -10,7 +10,6 @@ class App extends Component {
     super(props);
 
     this.state = {tab: 0}
-
     this.handleTabChange = this.handleTabChange.bind(this);
   }
 
@@ -24,14 +23,14 @@ class App extends Component {
       case 0:
         return (
           <div className="App">
-            <GraphPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
+            <IndividualGraph onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;
       case 1:
         return (
           <div className="App">
-            <GraphPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
+            <IndividualGraph onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;
