@@ -137,15 +137,18 @@ class GraphPage extends React.Component {
   handleTimeSubmit(tabNum) {
     fetch('/zoomChart')
       .then(res => res.json())
-      .then(users => {
-        this.setState({ users })
-      })
-			.then(
-				this.setState({dataSource : myDataSource2})
-			)
-      .then(this.updateChartData())
+      .then(newData => (
+        this.setState((prevState, props) => ({ dataSource: newData }))
+			))
+      this.updateChartData()
   }
 
+	updateChartData() {
+		this.setState((prevState, props) => ({
+			childChartConfigs : staticChartConfigs2
+		}));
+	}
+/*
   updateChartData() {
     this.setState({
       childChartConfigs: Object.assign(
@@ -154,13 +157,14 @@ class GraphPage extends React.Component {
       )
     });
   }
-
+*/
   componentDidMount() {
     fetch('/users')
       .then(res => res.json())
+			/*
       .then(users => {
         this.setState({ users })
-      })
+      })*/
   }
 
   render() {
