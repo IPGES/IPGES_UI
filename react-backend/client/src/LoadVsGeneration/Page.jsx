@@ -53,7 +53,7 @@ var staticChartConfigs = {
   	dataSource: myDataSource
 };
 
-class IndividualGraphPage extends React.Component {
+class LoadVsGenerationPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -121,4 +121,4 @@ class IndividualGraphPage extends React.Component {
   }
 }
 
-export default IndividualGraphPage;
+export default LoadVsGenerationPage;

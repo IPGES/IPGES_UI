@@ -12,7 +12,12 @@ router.get('/', function(req, res, next) {
   }, {
   	id: 2,
   	username: "Time is 24 Hours so 1pm = 13"
-  }]);
+	},
+	{
+  	id: 3,
+  	username: "Drag Across Graph To Zoom In"
+	}
+	]);
 });
 
 module.exports = router;

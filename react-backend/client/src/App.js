@@ -20,7 +20,7 @@ class App extends Component {
 
   render() {
     switch (this.state.tab) {
-      case 0:
+      case 0: //MUST HAVE Renders on DEFAULT
         return (
           <div className="App">
             <IndividualGraph onTabChange={this.handleTabChange} tab={this.state.tab}/>
