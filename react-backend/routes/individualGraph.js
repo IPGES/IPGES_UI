@@ -1,23 +1,22 @@
 var express = require('express');
 var router = express.Router();
 
-
+/*
 router.use(function timeLog(req, res, next) {
 	req.requestTime = Date.now();
 	next();
 })
+*/
 
 
 /* GET users listing. */
 //router.get('/start/:startime/end/:endtime', function(req, res, next) {
-router.get('/', function(req, res) {
+router.get('/start/:starttime/end/:endtime', function(req, res) {
 	// Comment out this line:
   //res.send('respond with a resource');
 
-
-	console.log('Time: ', req.requestTime);
-
-	//console.log("START TIME", req.params);
+	console.log("Start Time: ", req.params.starttime);
+	console.log("End Time: ", req.params.endtime);
 
 	res.json([{
 		chart : {
