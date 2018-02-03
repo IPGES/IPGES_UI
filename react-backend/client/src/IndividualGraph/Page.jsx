@@ -91,8 +91,9 @@ class IndividualGraphPage extends React.Component {
 
   handleTimeSubmit(timeStart, timeEnd) {
     const API = '/individualGraph'
-    const QUERY = '';
-    alert('StartTime: ' + timeStart + '\n' +
+//    const QUERY = '/start/12:07/end/13:08';
+		const QUERY = '';
+	  alert('StartTime: ' + timeStart + '\n' +
     'EndTime: ' + timeEnd);
 
     fetch(API + QUERY)
