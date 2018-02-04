@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var timeModel = require('../models/timeEntry.js');
 
 /*
 router.use(function timeLog(req, res, next) {
@@ -17,6 +18,15 @@ router.get('/start/:starttime/end/:endtime', function(req, res, next) {
 
 	console.log("Start Time: ", req.params.starttime);
 	console.log("End Time: ", req.params.endtime);
+
+	var dbResults = [];
+	timeModel.find({
+		$and: [{"time": {$gt:req.params.starttime - 1}},
+		{"time": {$lt:req.params.endtime}}]
+	}).exec(function(err, dbResults) {
+		if (err) throw err;
+		console.log(dbResults);
+	});
 
 	res.json([{
 		chart : {
