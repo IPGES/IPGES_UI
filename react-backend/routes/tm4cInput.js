@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
-var path = require("path");
 var timeModel = require('../models/timeEntry.js');
 
 /* GET users listing. */
