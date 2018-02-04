@@ -26,8 +26,20 @@ router.get('/start/:starttime/end/:endtime', function(req, res, next) {
 	}).exec(function(err, dbResults) {
 		if (err) throw err;
 		console.log(dbResults);
+		console.log(dbResults[0].time);
 	});
 
+	var time_string = "";
+	var volt_string = "";
+	var pwr_string = "";
+
+	var i = 0;
+	/*for(i = req.params.starttime; i <= req.params.endtime; i++)
+	{
+		time_string = time_string + "|" + dbResults[i].time;
+	}
+	console.log(time_string);
+*/
 	res.json([{
 		chart : {
 			caption: "IPGES Power Flow",
