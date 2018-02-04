@@ -22,7 +22,7 @@ router.get('/start/:starttime/end/:endtime', function(req, res, next) {
 	var dbResults = [];
 	timeModel.find({
 		$and: [{"time": {$gt:req.params.starttime - 1}},
-		{"time": {$lt:req.params.endtime}}]
+		{"time": {$lt:req.params.endtime + 1}}]
 	}).exec(function(err, dbResults) {
 		if (err) throw err;
 		console.log(dbResults);
@@ -32,9 +32,9 @@ router.get('/start/:starttime/end/:endtime', function(req, res, next) {
 	var time_string = "";
 	var volt_string = "";
 	var pwr_string = "";
-
+/*
 	var i = 0;
-	/*for(i = req.params.starttime; i <= req.params.endtime; i++)
+	for(i = req.params.starttime; i <= req.params.endtime; i++)
 	{
 		time_string = time_string + "|" + dbResults[i].time;
 	}
