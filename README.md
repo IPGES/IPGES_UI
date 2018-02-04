@@ -8,8 +8,8 @@ node.js
 Ubuntu:
 do not apt-get install nodejs! npm is known not to run on Node.js v4.2.6, which is what is installed by apt!
 Instead:
-``curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs``
+``curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -``
+``sudo apt-get install -y nodejs``
 
 OSX:  
 ``brew install node``
