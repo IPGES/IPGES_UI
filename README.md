@@ -4,25 +4,41 @@
 
 Prerequisite:node.js and npm
 node.js
+
 Ubuntu:
-``sudo apt-get node``
-OSX:
-``brew install node``
+do not apt-get install nodejs! npm is known not to run on Node.js v4.2.6, which is what is installed by apt!
+Instead:
+```
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+```
+
+```
+sudo apt-get install -y nodejs
+```
+
+OSX:  
+```
+brew install node
+```
 npm (node package manager) should be installed with node.js.
 Check that both installed with
-``node -v``
-``npm -v``
+```
+node -v
+```
+```
+npm -v
+```
 
 then run an update and upgrade.
 
 ### 2) Further Installing Dependencies:
 Inside the *react-backend* folder:
 ```
-$npm install
+npm install
 ```
 Inside the *react-backend/client* folder:
 ```
-$npm install
+npm install
 ```
 
 On Ubuntu:
@@ -35,13 +51,13 @@ and try again
 ### 3) Start Express Backend Server:
 Inside the *react-backend* folder:
 ```
-$npm start
+npm start
 ```
 
 ### 4) Start Client Server:
 Inside the *react-backend/client* folder:
 ```
-$npm start
+npm start
 ```
 
 ### 5) View Page at: http://localhost:3000/
