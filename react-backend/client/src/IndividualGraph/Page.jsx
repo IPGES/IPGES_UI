@@ -122,12 +122,6 @@ class IndividualGraphPage extends React.Component {
       .then(zoomGraphNotes => {
         this.setState({ zoomGraphNotes })
       })
-
-			const API = '/tm4cInput'
-			//var QUERY = "/time/1300";
-			var QUERY = "/";
-
-			fetch(API + QUERY)
   }
 
 
