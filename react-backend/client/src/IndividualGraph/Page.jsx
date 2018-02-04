@@ -116,14 +116,20 @@ class IndividualGraphPage extends React.Component {
 		}));
   }
 
-
   componentDidMount() {
     fetch('/zoomGraphNotes')
       .then(res => res.json())
       .then(zoomGraphNotes => {
         this.setState({ zoomGraphNotes })
       })
+
+			const API = '/tm4cInput'
+			//var QUERY = "/time/1300";
+			var QUERY = "/";
+
+			fetch(API + QUERY)
   }
+
 
   render() {
     return (

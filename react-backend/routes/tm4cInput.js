@@ -1,22 +1,28 @@
 var express = require('express');
 var router = express.Router();
-
-/*
-router.use(function timeLog(req, res, next) {
-	req.requestTime = Date.now();
-	next();
-})
-*/
-
+var bodyParser = require('body-parser');
+var path = require("path");
+var timeModel = require('../models/timeEntry.js');
 
 /* GET users listing. */
-//router.get('/start/:startime/end/:endtime', function(req, res, next) {
-router.get('/start/:starttime/end/:endtime', function(req, res, next) {
+
+router.post("/", function(req, res, next) {
 	// Comment out this line:
   //res.send('respond with a resource');
 
-	console.log("Start Time: ", req.params.starttime);
-	console.log("End Time: ", req.params.endtime);
+	var singleTimeEntry = new timeModel ({
+	  time: req.body.time,
+	  pv: req.body.pv,
+	  inverter: req.body.inverter,
+	  wind: req.body.wind,
+	  grid: req.body.grid,
+	  load: req.body.load
+	});
+
+	singleTimeEntry.save(function(err) {
+	  if (err) throw err;
+	  console.log('Time entry successfully saved.');
+	});
 
 	res.json([{
 		chart : {

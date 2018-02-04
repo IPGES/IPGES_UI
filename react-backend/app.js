@@ -1,28 +1,27 @@
 var express = require('express');
-var path = require('path'); //may not need
+var path = require('path');
 var mongoose = require("mongoose");
+
+//var favicon = require('serve-favicon');
+//var logger = require('morgan');
+//var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var zoomGraphNotes = require('./routes/zoomGraphNotes');
-var individualGraph = require('./routes/individualGraph')
-var totalsGraph = require('./routes/totalsGraph')
+var individualGraph = require('./routes/individualGraph');
+var totalsGraph = require('./routes/totalsGraph');
+var tm4cInput = require('./routes/tm4cInput');
+
+var timeModel = require('./models/timeEntry.js');
 
 var mongoDB = "mongodb://localhost/IPGES";
 mongoose.connect(mongoDB, function (err) {
   if (err) throw err;
   console.log("Connected to Mongo!");
 });
-var timeSchema = mongoose.Schema({
-  time: Number,
-  pv: Number,
-  inverter: Number,
-  wind: Number,
-  grid: Number,
-  load: Number
-});
 
-var TimeEntry = mongoose.model('ipgesModel', timeSchema);
-var singleTimeEntry = new TimeEntry ({
+var singleTimeEntry = new timeModel ({
   time: 1200,
   pv: 1,
   inverter: 2,
@@ -30,26 +29,33 @@ var singleTimeEntry = new TimeEntry ({
   grid: 4,
   load: 5
 });
+
+/*
 singleTimeEntry.save(function(err) {
   if (err) throw err;
   console.log('Time entry successfully saved.');
 });
 var dbResults = [];
-TimeEntry.find({
+timeModel.find({
   time: 1200
 }).exec(function(err, dbResults) {
   if (err) throw err;
   console.log(dbResults);
-});
-
-
+});*/
 
 var app = express();
+
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+//app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(cookieParser());
 
 app.use('/', index);
 app.use('/zoomGraphNotes', zoomGraphNotes);
 app.use('/individualGraph', individualGraph);
 app.use('/totalsGraph', totalsGraph);
+app.use('/tm4cInput', tm4cInput);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
