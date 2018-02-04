@@ -21,14 +21,7 @@ mongoose.connect(mongoDB, function (err) {
   console.log("Connected to Mongo!");
 });
 
-var singleTimeEntry = new timeModel ({
-  time: 1200,
-  pv: 1,
-  inverter: 2,
-  wind: 3,
-  grid: 4,
-  load: 5
-});
+timeModel.collection.drop();
 
 /*
 singleTimeEntry.save(function(err) {
