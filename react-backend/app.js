@@ -15,8 +15,8 @@ var tm4cInput = require('./routes/tm4cInput');
 
 var timeModel = require('./models/timeEntry.js');
 
-var mongoDB = "mongodb://localhost/IPGES";
-//var mongoDB = process.env.MONGODB_URI;
+//var mongoDB = "mongodb://localhost/IPGES";
+var mongoDB = process.env.MONGODB_URI;
 
 mongoose.connect(mongoDB, function (err) {
   if (err) throw err;

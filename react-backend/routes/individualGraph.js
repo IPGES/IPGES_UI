@@ -20,17 +20,16 @@ router.get('/start/:starttime/end/:endtime', function(req, res, next) {
 	console.log("End Time: ", req.params.endtime);
 
 	timeModel.find({
-		$and: [{"time": {$gt:req.params.starttime - 1}},
-		{"time": {$lt:req.params.endtime + 1}}]
+		time: {$gte:req.params.starttime, $lte:req.params.endtime}
 	}, (err, dbResults) => {
 		if (err) {
 			console.log("search error");
 		}
 		next.dbResults = dbResults;
+		next();
 	});
 }, function (req, res, next) {
-	//console.log(next.dbResults);
-	nparsedTimes = "";
+	next.parsedTimes = "";
 	if(next.dbResults.length > 0) {
 		next.parsedTimes += next.dbResults[0].time;
 		if(next.dbResults.length > 1) {
@@ -154,6 +153,8 @@ router.get('/start/:starttime/end/:endtime', function(req, res, next) {
 	next.returnList[0].dataset[3].data = next.parsedGrid;
 	next.returnList[0].dataset[4].data = next.parsedLoad;
 
+
+	console.log(next.parsedTimes);
 
 	res.json(next.returnList);
 });
