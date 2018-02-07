@@ -1,13 +1,13 @@
 import requests
 import json
 
-URL = "http://localhost:3000"
+URL = "https://damp-gorge-19491.herokuapp.com"
 URL += "/tm4cInput"
 
-dataStart = 420;
-dataStart2 = 520;
+dataStart = 350;
+dataStart2 = 870;
 
-for i in range (0,10): 
+for i in range (0,10):
 	payload = { "time": dataStart + i,
 				"pv" : dataStart2 + i,
 				"inverter": dataStart2 + i,
