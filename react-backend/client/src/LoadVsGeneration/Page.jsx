@@ -73,10 +73,14 @@ class LoadVsGenerationPage extends React.Component {
   }
 
   handleTimeSubmit(timeStart, timeEnd) {
-    const API = '/totalsGraph'
-    const QUERY = '';
-    alert('StartTime: ' + timeStart + '\n' +
-    'EndTime: ' + timeEnd);
+    var API = '/totalsGraph'
+		var splitStartTime = timeStart.split(':');
+		var splitEndTime = timeEnd.split(':');
+		alert('StartTime: ' + splitStartTime[0] + splitStartTime[1] + '\n' +
+		'EndTime: ' + splitEndTime[0] + splitEndTime[1]);
+		var QUERY = "/start/" + splitStartTime[0] + splitStartTime[1]
+								+ "/end/" + splitEndTime[0] + splitEndTime[1];
+
 
     fetch(API + QUERY)
       .then(res => res.json())

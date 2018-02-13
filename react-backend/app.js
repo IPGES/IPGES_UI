@@ -3,8 +3,8 @@ var path = require('path');
 var mongoose = require("mongoose");
 
 //var favicon = require('serve-favicon');
-//var logger = require('morgan');
-//var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
@@ -15,35 +15,31 @@ var tm4cInput = require('./routes/tm4cInput');
 
 var timeModel = require('./models/timeEntry.js');
 
-//var mongoDB = "mongodb://localhost/IPGES";
-var mongoDB = process.env.MONGODB_URI;
+if(typeof process.env.PORT == 'undefined') {
+  var mongoDB = "mongodb://localhost/IPGES";
+} else {
+  var mongoDB = process.env.MONGODB_URI;
+}
 
 mongoose.connect(mongoDB, function (err) {
   if (err) throw err;
   console.log("Connected to Mongo!");
 });
 
-
-/*
-singleTimeEntry.save(function(err) {
-  if (err) throw err;
-  console.log('Time entry successfully saved.');
-});
-var dbResults = [];
-timeModel.find({
-  time: 1200
-}).exec(function(err, dbResults) {
-  if (err) throw err;
-  console.log(dbResults);
-});*/
-
 var app = express();
+// view engine setup
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'jade');
 
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-//app.use(logger('dev'));
+app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(cookieParser());
+app.use(cookieParser());
+// Express only serves static assets in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 
 app.use('/', index);
 app.use('/zoomGraphNotes', zoomGraphNotes);

@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/start/:starttime/end/:endtime', function(req, res, next) {
 	// Comment out this line:
   //res.send('respond with a resource');
-
+	console.log("/start/:starttime/end/:endtime call");
 	res.json([{
 		chart : {
 			caption: "Load vs Generation",
@@ -50,5 +50,6 @@ router.get('/', function(req, res, next) {
 		]
 	}]);
 });
+
 
 module.exports = router;

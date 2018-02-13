@@ -59,7 +59,6 @@ var myDataSource = {
       ]
 }
 
-
 var staticChartConfigs = {
 	id: "static-chart",
     renderAt: "static-chart-container",
@@ -90,15 +89,22 @@ class IndividualGraphPage extends React.Component {
   }
 
   handleTimeSubmit(timeStart, timeEnd) {
-    const API = '/individualGraph'
 		var splitStartTime = timeStart.split(':');
 		var splitEndTime = timeEnd.split(':');
 	  alert('StartTime: ' + splitStartTime[0] + splitStartTime[1] + '\n' +
     'EndTime: ' + splitEndTime[0] + splitEndTime[1]);
-		var QUERY = "/start/" + splitStartTime[0] + splitStartTime[1]
-								+ "/end/" + splitEndTime[0] + splitEndTime[1];
+		var API = '/individualGraph'
 
-    fetch(API + QUERY)
+    fetch(API, {
+			method: 'post',
+			headers: {
+      	'content-type': 'application/json'
+    	},
+			body: JSON.stringify({
+				start: splitStartTime[0] + splitStartTime[1],
+				end: splitEndTime[0] + splitEndTime[1],
+      })
+		})
       .then(res => res.json())
       .then(newData => (
         this.setState((prevState, props) => ({ dataSource: newData[0] }))
