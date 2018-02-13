@@ -7,13 +7,6 @@ from requestExpress import post_to_express
 URL = "https://damp-gorge-19491.herokuapp.com"
 URL += "/tm4cInput"
 
-
-ser = serial.Serial(port=portNum, baudrate=115200, timeout=10) #need to set time
-ser.flushInput()
-ser.flushOutput()
-
-results = response.text
-print("Requested%s", results);
 #Choose Port
 print("These are all the available ports:")
 print(serial_ports())

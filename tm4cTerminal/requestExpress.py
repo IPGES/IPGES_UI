@@ -2,7 +2,7 @@ import requests
 import json
 
 def post_to_express(time, pv, inverter, wind, grid, load):
-	URL = "http://localhost:3001"
+	URL = "https://damp-gorge-19491.herokuapp.com"
 	URL += "/tm4cInput"
 
 	payload = { "time": time,
@@ -14,5 +14,5 @@ def post_to_express(time, pv, inverter, wind, grid, load):
 	headers = {'Content-Type': 'application/json'}
 	response = requests.post(url = URL, headers = headers, data = json.dumps(payload));
 
-	results = response.text
-	print("Requested%s", results);
+	//results = response.text
+	//print("Requested%s", results);
