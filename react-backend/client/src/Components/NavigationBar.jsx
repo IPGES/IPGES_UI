@@ -35,25 +35,22 @@ class NavigationBar extends React.Component {
 
           <Navbar.Collapse>
           <Nav right eventKey={0} href="#">
-            <NavItem eventKey={1} href="#">
-              System Graph
-  			    </NavItem>
-            <NavItem eventKey={2} href="#">
-              Load vs Generation
-  			    </NavItem>
-            <NavItem eventKey={3} href="#">
-      				Controls
-      			</NavItem>
-            <NavItem eventKey={4} href="#">
-              Database
-            </NavItem>
-            <NavItem eventKey={5} href="#">
-              Realtime Data
-            </NavItem>
             <NavItem eventKey={0} href="#">
               Oneline
             </NavItem>
-            <NavItem eventKey={6} href="#">
+            <NavItem eventKey={1} href="#">
+              Realtime Data
+            </NavItem>
+            <NavItem eventKey={2} href="#">
+              Load vs Generation
+            </NavItem>
+            <NavItem eventKey={3} href="#">
+              System Graph
+  			    </NavItem>
+            <NavItem eventKey={4} href="#">
+      				Breaker Control
+      			</NavItem>
+            <NavItem eventKey={5} href="#">
               Team
             </NavItem>
           </Nav>

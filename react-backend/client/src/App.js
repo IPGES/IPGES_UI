@@ -33,7 +33,7 @@ class App extends Component {
           </div>
         );
         break;
-      case 1:
+      case 3:
         return (
           <div className="App">
             <IndividualGraph onTabChange={this.handleTabChange} tab={this.state.tab}/>
@@ -47,28 +47,21 @@ class App extends Component {
           </div>
         );
         break;
-      case 3:
+      case 4:
         return (
           <div className="App">
             <ControlsPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
           </div>
         );
         break;
-      case 4:
-        return (
-          <div className="App">
-            <DatabasePage onTabChange={this.handleTabChange} tab={this.state.tab}/>
-          </div>
-        );
-        break;
-      case 5:
+      case 1:
           return (
             <div className="App">
               <RealtimeDataPage onTabChange={this.handleTabChange} tab={this.state.tab}/>
             </div>
           );
           break;
-      case 6:
+      case 5:
           return (
             <div className="App">
               <TeamPage onTabChange={this.handleTabChange} tab={this.state.tab}/>

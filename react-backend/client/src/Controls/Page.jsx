@@ -20,7 +20,8 @@ class ControlsPage extends React.Component {
     return (
       <div>
         <NavigationBar onTabChange={this.handleTabChange}/>
-        <h1> Please contact the Senior Design Team to make Controls page </h1>
+        <h1> Breaker Controls </h1>
+        <img src={require('./grid.bmp')} style={{width: 800}}/>
         <Footer />
       </div>
     );

@@ -53,11 +53,18 @@ Inside the *react-backend* folder:
 ```
 npm start
 ```
+### 4) Start MongoDB
 
-### 4) Start Client Server:
+On a mac with homebrew you can start mongodb from the terminal:
+```
+brew services start mongodb
+
+```
+
+### 5) Start Client Server:
 Inside the *react-backend/client* folder:
 ```
 npm start
 ```
 
-### 5) View Page at: http://localhost:3000/
+### 6) View Page at: http://localhost:3000/ or on Heroku Deployment
