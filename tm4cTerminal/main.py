@@ -32,7 +32,7 @@ while True:
 		parsedTm4c = str(tm4cIn).rsplit('b\'')[1].rsplit('\\r\\n')[0]
 		#print(parsedTm4c[0])
 		timeRecieved = datetime.datetime.now()
-		timeValue = timeRecieved.hour * 100 + timeRecieved.minute
+		timeValue = timeRecieved.hour * 10000 + timeRecieved.minute * 100 + timeRecieved.second;
 		pvValue = parsedTm4c.split("\"pv\" : ")[1].split(',')[0]
 		inverterValue = parsedTm4c.split("\"inverter\" : ")[1].split(',')[0]
 		windValue = parsedTm4c.split("\"wind\" : ")[1].split(',')[0]

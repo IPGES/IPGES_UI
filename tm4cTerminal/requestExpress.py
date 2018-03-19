@@ -15,4 +15,4 @@ def post_to_express(time, pv, inverter, wind, grid, load):
 	response = requests.post(url = URL, headers = headers, data = json.dumps(payload));
 
 	results = response.text
-	print("Requested%s", results);
+	print("Response: ", results);
