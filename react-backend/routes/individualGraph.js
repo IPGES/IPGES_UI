@@ -116,7 +116,7 @@ router.post('/', function(req, res) {
 
 function query(starttime, endtime) {
 	var query = {
-		$gte: starttime, $lte: endtime
+		$gte: starttime * 100, $lte: endtime * 100
 	};
 	return new Promise(function(resolve, reject) {
 		timeModel.find({
