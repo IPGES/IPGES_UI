@@ -7,8 +7,8 @@ import Chart from './Chart.jsx';
 var myDataSource = {
 		chart: {
 		  	caption: "IPGES Power Flow",
-        numberSuffix: "milli-units",
-        "yaxisname": "V or I",
+        numberSuffix: "milli",
+        "yaxisname": "Volts/Amps",
         "xaxisname": "Time",
         "yaxisminValue": "0",
         "yaxismaxValue": "25000",

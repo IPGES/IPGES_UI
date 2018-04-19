@@ -7,8 +7,8 @@ import Chart from './Chart.jsx';
 var myDataSource = {
 		chart: {
 		  	caption: "Load Vs Generation",
-        numberSuffix: "W",
-        "yaxisname": "Power",
+        numberSuffix: "milliwatts",
+        "yaxisname": "Watts",
         "xaxisname": "Time",
         "yaxisminValue": "0",
         "yaxismaxValue": "1400",
