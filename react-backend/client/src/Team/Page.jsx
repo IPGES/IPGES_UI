@@ -24,7 +24,7 @@ class TeamPage extends React.Component {
         <figcaption> Dr. Santoso, Professor in Charge </figcaption>
         <img src={require('./Braden.jpg')} style={{width: 300}}/>
         <figcaption> Braden Stotmeister - Protection System, Renewable Syncronization </figcaption>
-        <img src={require('./Julia.jpg')} style={{width: 300}}/>
+        <img src={require('./Julia.png')} style={{width: 300}}/>
         <figcaption> Julia Conger - Variable Load, Control Algorithm </figcaption>
         <img src={require('./Joshua.jpg')} style={{width: 300}}/>
         <figcaption> Joshua Graham - Analog Intergrated Circuits, Photovoltaic Generator </figcaption>
@@ -35,7 +35,7 @@ class TeamPage extends React.Component {
         <img src={require('./Kassandra.jpg')} style={{width: 300}}/>
         <figcaption> Kassandra Smith - Photovoltaic Generator, UI </figcaption>
         <img src={require('./Suma.jpg')} style={{width: 300}}/>
-        <figcaption> Suma - Graduate Research Advisor </figcaption>
+        <figcaption> Suma Jothibasu- Graduate Research Advisor </figcaption>
         <img src={require('./Alvaro.jpg')} style={{width: 300}}/>
         <figcaption> Alvaro Furlani - Graduate Research Advisor </figcaption>
         <Footer />

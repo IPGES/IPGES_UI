@@ -17,17 +17,19 @@ router.post('/', function(req, res) {
 	queryPromise.then(function(dbResults) {
 		jsonResponse = [{
 			chart : {
-				caption: "IPGES Power Flow",
-				numberSuffix: "W",
-				"yaxisname": "Power",
+				caption: "IPGES Voltage, Current",
+				numberSuffix: "milli",
+				"yaxisname": "Volts/Amps",
 				"xaxisname": "Time",
-				"yaxisminValue": "0",
-				"yaxismaxValue": "1500",
+				"yAxisMinValue": "0",
+				"yAxisMaxValue": "30000",
 				"forceAxisLimits" : "1",
 				"pixelsPerPoint": "1",
 				"pixelsPerLabel": "24",
 				"lineThickness": "1",
 
+				"formatNumber": '0',
+				"formatNumberScale": '0',
 				"compactdatamode" : "1",
 				"dataseparator" : "|",
 
@@ -49,23 +51,23 @@ router.post('/', function(req, res) {
 			}],
 			dataset : [
 				{
-					seriesname : "PV",
+					seriesname : "NA",
 					data: ""
 				},
 				{
-					seriesname : "Inverter",
+					seriesname : "Load VRMS",
 					data: ""
 				},
 				{
-					seriesname : "Wind",
+					seriesname : "Load IRMS",
 					data: ""
 				},
 				{
-					seriesname : "Grid",
+					seriesname : "Dist VRMS",
 					data: ""
 				},
 				{
-					seriesname : "Load",
+					seriesname : "Dist IRMS",
 					data: ""
 				}
 			]
@@ -116,7 +118,7 @@ router.post('/', function(req, res) {
 
 function query(starttime, endtime) {
 	var query = {
-		$gte: starttime * 100, $lte: endtime * 100
+		$gte: starttime, $lte: endtime
 	};
 	return new Promise(function(resolve, reject) {
 		timeModel.find({

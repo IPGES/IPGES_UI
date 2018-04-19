@@ -57,7 +57,7 @@ class OnelinePage extends React.Component {
         <p>
           <br />
           Here is our team working on it. The process took 9 months. The process
-          involved planning and engineering. 
+          involved planning and engineering.
           <br />
         </p>
         <Footer />

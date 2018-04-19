@@ -7,16 +7,17 @@ import Chart from './Chart.jsx';
 var myDataSource = {
 		chart: {
 		  	caption: "IPGES Power Flow",
-        numberSuffix: "W",
-        "yaxisname": "Power",
+        numberSuffix: "milli-units",
+        "yaxisname": "V or I",
         "xaxisname": "Time",
         "yaxisminValue": "0",
-        "yaxismaxValue": "1400",
-        "forceAxisLimits" : "1",
+        "yaxismaxValue": "25000",
+        "forceAxisLimits" : "0",
         "pixelsPerPoint": "1",
         "pixelsPerLabel": "24",
         "lineThickness": "1",
 
+				"formatNumberScale": '0',
         "compactdatamode" : "1",
 				"dataseparator" : "|",
 
@@ -101,13 +102,13 @@ class IndividualGraphPage extends React.Component {
       	'content-type': 'application/json'
     	},
 			body: JSON.stringify({
-				start: splitStartTime[0] + splitStartTime[1],
-				end: splitEndTime[0] + splitEndTime[1],
+				start: (splitStartTime[0] + splitStartTime[1]) * 100,
+        end: (splitEndTime[0] + splitEndTime[1]) * 100,
       })
 		})
       .then(res => res.json())
       .then(newData => (
-        this.setState((prevState, props) => ({ dataSource: newData[0] }))
+        this.setState((prevState, props) => ({ dataSource: newData[0]}))
       ))
       .then(() => (this.updateChartData()))
   }

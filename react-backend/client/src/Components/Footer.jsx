@@ -7,7 +7,7 @@ class Footer extends React.Component {
       <Grid>
         <hr />
         <footer>
-          <p>University of Texas 2018 v1.11</p>
+          <p>University of Texas 2018 v1.20</p>
         </footer>
       </Grid>
     );
