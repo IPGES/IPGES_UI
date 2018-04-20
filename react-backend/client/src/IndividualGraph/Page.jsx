@@ -129,6 +129,28 @@ class IndividualGraphPage extends React.Component {
       .then(zoomGraphNotes => {
         this.setState({ zoomGraphNotes })
       })
+
+			var timeStart = "00:00";
+			var timeEnd = "24:00";
+			var splitStartTime = timeStart.split(':');
+			var splitEndTime = timeEnd.split(':');
+			var API = '/individualGraph'
+
+			fetch(API, {
+				method: 'post',
+				headers: {
+					'content-type': 'application/json'
+				},
+				body: JSON.stringify({
+					start: (splitStartTime[0] + splitStartTime[1]) * 100,
+					end: (splitEndTime[0] + splitEndTime[1]) * 100,
+				})
+			})
+				.then(res => res.json())
+				.then(newData => (
+					this.setState((prevState, props) => ({ dataSource: newData[0]}))
+				))
+				.then(() => (this.updateChartData()))
   }
 
 

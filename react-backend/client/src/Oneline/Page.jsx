@@ -20,8 +20,8 @@ class OnelinePage extends React.Component {
     return (
       <div>
         <NavigationBar onTabChange={this.handleTabChange}/>
-        <h1> IPGES Oneline </h1>
-        <img src={require('./OnelineImage.png')} style={{width: 800}}/>
+        <h1> Intelligent Power Grid </h1>
+        <video controls autoplay src={require('./ipges.mp4')} style={{width: 800}}/>
         <p>
           <br />
           IPGES provides a control system solution managing renewable energy
@@ -39,25 +39,26 @@ class OnelinePage extends React.Component {
           therefore, supply power intermittently, leading to energy mismatch
           and reverse power flow that can damage grid infrastructure.
           <br />
-          The goal of the Intelligent Power Grid Experimental System is,
-          therefore, to design a system which will allow users to simulate
-          real-life scenarios and test controls which mitigate these effects.
-          The planned design comprises of three sections: the grid model, a
-          controls system, and protections. These components simulate the
-          essential elements of the power grid. The grid model is developed
-          on top of three previous projects: a grid system, a solar simulator,
-          and a wind simulator. The combination of these models allows us to
-          implement simulations which vary the supply and demand to match
-          real-world data. The controls system varies system demand to maintain
-          the grid at a stable frequency used in actual, full-scale power
-          grids. The protections are also based on realistic relay and circuit
-          breaker model that prevents damage to a grid.
+          <h1> IPGES Oneline </h1>
+          <img src={require('./OnelineImage.png')} style={{width: 800}}/>
         </p>
+        The goal of the Intelligent Power Grid Experimental System is,
+        therefore, to design a system which will allow users to simulate
+        real-life scenarios and test controls which mitigate these effects.
+        The planned design comprises of three sections: the grid model, a
+        controls system, and protections. These components simulate the
+        essential elements of the power grid. The grid model is developed
+        on top of three previous projects: a grid system, a solar simulator,
+        and a wind simulator. The combination of these models allows us to
+        implement simulations which vary the supply and demand to match
+        real-world data. The controls system varies system demand to maintain
+        the grid at a stable frequency used in actual, full-scale power
+        grids. The protections are also based on realistic relay and circuit
+        breaker model that prevents damage to a grid.
         <img src={require('./JoshWorking.jpg')} style={{width: 800}}/>
         <p>
           <br />
-          Here is our team working on it. The process took 9 months. The process
-          involved planning and engineering.
+          Josh is our dedicated Analog Specialist
           <br />
         </p>
         <Footer />
