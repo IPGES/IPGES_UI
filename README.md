@@ -71,5 +71,5 @@ npm start
 ### 6) View Page at: http://localhost:3000/ or on Heroku Deployment
 
 ### 7) Guides
-Heroku Deployment: https://medium.freecodecamp.org/how-to-deploy-a-react-app-with-an-express-server-on-heroku-32244fe5a250
+Heroku Deployment: https://daveceddia.com/deploy-react-express-app-heroku/
 
