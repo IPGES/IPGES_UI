@@ -48,17 +48,18 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 and try again
 
-### 3) Start Express Backend Server:
-Inside the *react-backend* folder:
-```
-npm start
-```
-### 4) Start MongoDB
+### 3) Start MongoDB
 
 On a mac with homebrew you can start mongodb from the terminal:
 ```
 brew services start mongodb
 
+```
+
+### 4) Start Express Backend Server:
+Inside the *react-backend* folder:
+```
+npm start
 ```
 
 ### 5) Start Client Server:
